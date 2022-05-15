@@ -7,13 +7,18 @@ use App\Models\Questionnaire;
 use App\Models\Place;
 use App\Models\Country;
 use App\Models\City;
+use App\Services\CountryService;
+use App\Services\CityService;
 
 class PlaceController extends Controller
 {
 
     public function AddPlaceView(){
 
-        return view('admin.addplace');   
+        $all_stored_countries = CountryService::ListAllDataInAttribute();
+        $all_stored_cities = CityService::ListAllDataInAttribute();
+        
+        return view('admin.addplace',compact('all_stored_countries','all_stored_cities'));   
     }
     public function UploadPlace(Request $request){
 

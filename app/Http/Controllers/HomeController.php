@@ -17,7 +17,7 @@ class HomeController extends Controller
 
         $usertype = Auth::user()->usertype;
         if($usertype == 1){
-            return view('admin.home');
+            return redirect('ShowPlaces');
         }else{
             $user_country = Auth::user()->country;
             $user_city = Auth::user()->city;
@@ -38,15 +38,7 @@ class HomeController extends Controller
         return view('User.home',compact('data'));
         }
     }
-    public function user_ques (){
 
-
-
-        $data = DB::table('Questionnaires')->where('statues','show')->get();
-
-        return view('User.user_quesionnaire',compact('data'));
-        
-    }
     
 
     public function find_places_by_search(Request $request){
@@ -84,7 +76,7 @@ class HomeController extends Controller
 
     public function quesionnairePlaces(Request $request){
 
-        $data = Place::whereIn('city_id',[City::getCityIdByIcommonFood($request->food)])->get();
+        $data = Place::whereIn('city_id',[City::getCityIdByCommonFood($request->food)])->get();
         // $data = City::getCityIdByIcommonFood($request->food);
         
         return view('user.places',compact('data'));
@@ -94,6 +86,12 @@ class HomeController extends Controller
     public function placeDetails($id){
         $data = Place::find($id);
         return view('user.placeDetails',compact('data'));
+    }
+    public function AllPlacesView(){
+
+        $data = Place::all();
+        
+        return view('user.places',compact('data'));
     }
     //
 }

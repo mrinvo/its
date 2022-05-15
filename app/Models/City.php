@@ -14,7 +14,7 @@ class City extends Model
     public static function getCityIdByName($name){
         return City::where('name', $name)->pluck('id')->first();
     }
-    public static function getCityIdByIcommonFood($commonfood){
+    public static function getCityIdByCommonFood($commonfood){
         return City::where('common_food', $commonfood)->pluck('id')->first();
     }
     

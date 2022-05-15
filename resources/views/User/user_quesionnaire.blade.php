@@ -85,7 +85,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 @csrf
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
-                    @foreach ($data as $question )
+                    @foreach ($all_stored_quesionnaires as $question )
                         
                    
                     <div class="question">

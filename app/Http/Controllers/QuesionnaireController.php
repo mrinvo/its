@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Questionnaire;
 use App\Models\Place;
+use App\Services\QuesionnaireService;
 
 class QuesionnaireController extends Controller
 {
@@ -72,5 +73,17 @@ class QuesionnaireController extends Controller
 
 
     }
+
+    public function QuestionnaireView (){
+
+
+
+        $all_stored_quesionnaires = QuesionnaireService::ListAllQuesionnaires();
+
+        return view('User.user_quesionnaire',compact('all_stored_quesionnaires'));
+        
+    }
+
+
     //
 }

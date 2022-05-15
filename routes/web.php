@@ -51,9 +51,10 @@ Route::get('/deletePlace/{id}',[PlaceController::class,'deletePlace']);
 // user routes
 Route::get('/redirect',[HomeController::class,'redirect']);
 Route::get('/search',[HomeController::class,'search']);
+Route::get('/allplacesview',[HomeController::class,'AllPlacesView']);
 Route::POST('/quesionnairePlaces',[HomeController::class,'quesionnairePlaces']);
 Route::get('/placeDetails/{id}',[HomeController::class,'placeDetails']);
-Route::get('/user_ques',[HomeController::class,'user_ques']);
+Route::get('/user_ques',[QuesionnaireController::class,'QuestionnaireView']);
 Route::get('/manual_search',[HomeController::class,'manual_search']);
 Route::post('/find_places_by_search',[HomeController::class,'find_places_by_search']);
 Route::get('/',[HomeController::class,'index']);

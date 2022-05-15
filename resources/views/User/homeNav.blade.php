@@ -16,6 +16,9 @@
               <a class="nav-link" href="{{ url('user_ques') }}">Quesionnaire</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ url('allplacesview') }}">All Places</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ url('manual_search') }}">Manual search</a>
             </li>
             <li class="nav-item" id="x">

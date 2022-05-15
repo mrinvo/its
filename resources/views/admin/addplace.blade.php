@@ -63,34 +63,18 @@
                 <div style="padding: 15px;">
                     <label for="country">country</label>
                     <select name="country" id="country" class="inp">
-                        <option  value="1">EGYPT</option>
-                        <option  value="2">USA</option>
-                        <option  value="3">UK</option>
-                        <option  value="4">UAK</option>
-                        <option  value="5">SUDAN</option>
-                        <option  value="6">QATER</option>
-                        <option  value="7">FRANCE</option>
-                        <option  value="8">GERMANY</option>
-                        <option  value="9">BRAZIL</option>
-                        <option  value="10">MEXICO</option>
+                        @foreach ($all_stored_countries as $country)
+                        <option  value="{{ $country->id }}">{{ $country->name }}</option>
+                        @endforeach
                         
                     </select>
                 </div>
                 <div style="padding: 15px;">
-                    <label for="country">country</label>
-                    <select name="city" id="country" class="inp">
-                        <option  value="1">CAIRO</option>
-                        <option  value="2">ALEXANDRIA</option>
-                        <option  value="3">GHARBIA</option>
-                        <option  value="4">NEW YORK</option>
-                        <option  value="5">MIAMI</option>
-                        <option  value="6">CLEVLAND</option>
-                        <option  value="7">DUBAI</option>
-                        <option  value="8">ABU DABHI</option>
-                        <option  value="9">AJMAN</option>
-                        <option  value="10">OXFORD</option>
-                        <option  value="10">CAMBRIDGE</option>
-                        <option  value="11">LONDON</option>
+                    <label for="city">city</label>
+                    <select name="city" id="city" class="inp">
+                        @foreach ($all_stored_cities as $city )
+                            <option value="{{ $city->id }}">{{ $city->name }}</option>
+                        @endforeach
                         
                     </select>
                 </div>
